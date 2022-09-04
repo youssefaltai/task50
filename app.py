@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, LoginManager, login_required, login_user
+from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import ValidationError, Length, InputRequired
@@ -52,6 +52,12 @@ def home():
 @login_required
 def dashboard():
     return render_template("dashboard.html")
+
+
+@app.route('/logout', methods=["GET", "POST"])
+def logout():
+    logout_user()
+    return redirect(url_for("home"))
 
 
 @app.route('/login', methods=["GET", "POST"])
