@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin
+from flask_login import UserMixin, LoginManager
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import ValidationError, Length, InputRequired
@@ -11,6 +11,14 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
 app.config["SECRET_KEY"] = "MatthewMichaelMattMurdock"
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login"
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(id=int(user_id))
 
 
 class User(db.Model, UserMixin):
@@ -42,7 +50,9 @@ def home():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template("login.html", form=LoginForm())
+    form = LoginForm()
+
+    return render_template("login.html", form=form)
 
 
 @app.route('/register', methods=["GET", "POST"])
