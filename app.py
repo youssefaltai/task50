@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, LoginManager
+from flask_login import UserMixin, LoginManager, login_required
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import ValidationError, Length, InputRequired
@@ -46,6 +46,12 @@ class LoginForm(FlaskForm):
 @app.route('/')
 def home():
     return render_template("home.html")
+
+
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    return render_template("dashboard.html")
 
 
 @app.route('/login', methods=["GET", "POST"])
