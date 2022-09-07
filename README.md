@@ -62,8 +62,8 @@ or walk through the steps below to run the app locally on your machine.
 - `templates/login.html` is the template for the Login page.
 - `templates/home.html` is the template for the main page.
 - `templates/dashboard.html` is the template for the Dashboard page, where the user can manage their tasks.
-- `templates/edit.html` is the template for the Edit page, where the user can edit a specific task determined through
-  the url.
+- `templates/edit.html` is the template for the Edit page, where the user can edit a specific task determined via a url
+  parameter.
 - `Procfile` is a file that tells Heroku how to run the app.
 - `requirements.txt` is the result of running `pip freeze`, it includes all the dependencies needed before hosting the
   app.
