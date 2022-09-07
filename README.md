@@ -15,12 +15,14 @@ You can either start using the app by clicking [here](http://task50.herokuapp.co
 
 or walk through the steps below to run the app locally on your machine.
 
-## Requirements
+## Host the app locally on your machine
+
+### Requirements
 
 - Install Python 3.x
 - Install SQLite3
 
-## Setting up the environment
+### Setting up the environment
 
 1. Open a terminal window, run the following command to clone the
    repository `git clone https://github.com/youssef-attai/cs50_project.git`
@@ -30,7 +32,7 @@ or walk through the steps below to run the app locally on your machine.
 5. Run `source venv/bin/activate` to activate the virtual environment
 6. Run `pip3 install -r requirements.txt` to install the requirements in the environment
 
-## Setting up the database
+### Setting up the database
 
 1. Run the following command `touch database.db`
 2. Run the following command `export DATABASE_URL=sqlite:///database.db`
@@ -41,12 +43,12 @@ or walk through the steps below to run the app locally on your machine.
 7. Make sure the database is created successfully by running `sqlite3 database.db .tables`, you should see two
    tables, `user` and `task`
 
-## Running the app
+### Running the app
 
 1. Run the following command `flask run`
 2. Go to http://127.0.0.1:5000, you should see the app working as expected
 
-## Existing the app
+### Existing the app
 
 1. Just hit CTRL+C in the terminal window
 
