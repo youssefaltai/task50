@@ -230,7 +230,3 @@ def register():
         return redirect(url_for("login"))
 
     return render_template("register.html", form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True, threaded=True)
