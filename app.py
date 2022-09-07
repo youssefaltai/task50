@@ -16,6 +16,7 @@ app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
 db = SQLAlchemy(app)
+db.create_all()
 bcrypt = Bcrypt(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
 app.config["SECRET_KEY"] = "MatthewMichaelMattMurdock"
