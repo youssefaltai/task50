@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import ValidationError
+from flask import request
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
@@ -91,10 +92,11 @@ class TaskAddForm(FlaskForm):
     })
 
 
-@app.route('/toggle/<taskid>')
-def toggle(taskid):
-    task = Task.query.get(taskid)
-    task.done = not task.done
+@app.route('/toggle', methods=["POST"])
+@login_required
+def toggle():
+    task = Task.query.get(int(request.form.get("taskid")))
+    task.done = (request.form.get("done") == 'true')
     db.session.commit()
     return '', 204
 

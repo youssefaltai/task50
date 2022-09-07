@@ -21,7 +21,7 @@
         {% for task in tasks %}
             <li class="list-group-item">
                 <input data-taskid="{{ task.id }}" class="form-check-input me-1" type="checkbox" value=""
-                       id="checkbox-{{ task.id }}" {% if task.done %}checked{% endif  %}>
+                       id="checkbox-{{ task.id }}" {% if task.done %}checked{% endif %}>
                 <label class="form-check-label" for="checkbox-{{ task.id }}">{{ task.title }}</label>
             </li>
         {% endfor %}
@@ -31,15 +31,14 @@
     <script>
         document.querySelectorAll(".form-check-input.me-1").forEach(checkbox => {
             checkbox.addEventListener("click", () => {
-                const xhr = new XMLHttpRequest();
-                const url = `/toggle/${checkbox.dataset.taskid}`;
-                xhr.open("GET", url, true);
-                xhr.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        console.log(this.responseText);
-                    }
-                }
-                xhr.send();
+                $.ajax({
+                    url: `/toggle`,
+                    type: "POST",
+                    data: {
+                        taskid: checkbox.dataset.taskid,
+                        done: checkbox.checked
+                    },
+                });
             })
         });
     </script>
