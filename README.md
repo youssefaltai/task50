@@ -1,7 +1,10 @@
 # Task50
-This is my CS50's Final Project
 
-You can try it out [here](http://task50.herokuapp.com/)
+This is my CS50's Final Project, it is a To-do web app created using Flask and Bootsrap. You can sign up for a new account, add, edit and delete, and your to-dos, and of course mark them as done.
+
+You can either use the app by clicking [here](http://task50.herokuapp.com/),
+
+or walk through the steps below to run the app locally on your machine.
 
 ## Requirements
 
