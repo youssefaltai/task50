@@ -1,10 +1,15 @@
 # Task50
 
+#### Video Demo:  <URL HERE>
+
+#### Description:
+
+This is a To-do web app created using Flask and Bootstrap. You can sign up for a new account, you can create, edit and
+delete tasks, and of course, mark them as done.
+
 ![Screenshot of the app's dashboard](https://github.com/youssef-attai/cs50_project/blob/master/imgs/screenshot.png)
 
-This is my CS50's Final Project, it is a To-do web app created using Flask and Bootstrap. You can sign up for a new
-account.
-You can create, edit and delete tasks, and of course, mark them as done.
+This is my CS50's Final Project.
 
 You can either start using the app by clicking [here](http://task50.herokuapp.com/),
 
@@ -46,6 +51,25 @@ or walk through the steps below to run the app locally on your machine.
 1. Just hit CTRL+C in the terminal window
 
 ## How everything works
+
+- `app.py` is the application controller, it contains the Flask app setup, all the different routes, and model classes.
+- `templates/` folder contains all the HTML templates.
+- `templates/layout.html` is the base template that all other templates extend, it has important links that need to be
+  in every template's `<head>` tag.
+- `templates/register.html` is the template for the Registration page.
+- `templates/login.html` is the template for the Login page.
+- `templates/home.html` is the template for the main page.
+- `templates/dashboard.html` is the template for the Dashboard page, where the user can manage their tasks.
+- `templates/edit.html` is the template for the Edit page, where the user can edit a specific task determined through
+  the url.
+- `Procfile` is a file that tells Heroku how to run the app.
+- `requirements.txt` is the result of running `pip freeze`, it includes all the dependencies needed before hosting the
+  app.
+
+When the user first opens the app, they have to register a new account. Every user must have a unique username.
+All user inputs are validated server-side only, and not checked in the browser. Once the user registers successfully,
+they can log in using their username and password, to be redirected to their dashboard, where they can add new tasks to
+their empty to-do list. Users can edit and delete tasks, as well as marking them as "done" or "not done".
 
 ### Entity-Relationship Diagram
 
