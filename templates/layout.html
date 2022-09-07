@@ -17,7 +17,11 @@
     {% if messages %}
         <ul>
             {% for category, message in messages %}
-                <li class="alert alert-{{ category }} m-3" style="list-style: none">{{ message }}</li>
+                <li class="m-2 alert alert-{{ category }} alert-dismissible fade show" role="alert"
+                    style="list-style: none">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </li>
             {% endfor %}
         </ul>
     {% endif %}

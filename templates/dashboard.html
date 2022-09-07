@@ -3,8 +3,12 @@
     Dashboard
 {% endblock %}
 {% block container %}
+    <ul class="nav justify-content-end">
+        <li class="nav-item mt-2">
+            <a class="btn btn-dark" href="{{ url_for('logout') }}">Log out</a>
+        </li>
+    </ul>
     <div class="text-center mt-5">
         <h1 class="display-1">Hello, {{ current_user.username }}</h1>
-        <a class="btn btn-dark" href="{{ url_for('logout') }}">Log out.</a>
     </div>
 {% endblock %}
