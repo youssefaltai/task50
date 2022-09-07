@@ -2,7 +2,9 @@
 
 ![Screenshot of the app's dashboard](https://github.com/youssef-attai/cs50_project/blob/master/imgs/screenshot.png)
 
-This is my CS50's Final Project, it is a To-do web app created using Flask and Bootstrap. You can sign up for a new account. You can create, edit and delete tasks, and of course, mark them as done.
+This is my CS50's Final Project, it is a To-do web app created using Flask and Bootstrap. You can sign up for a new
+account.
+You can create, edit and delete tasks, and of course, mark them as done.
 
 You can either start using the app by clicking [here](http://task50.herokuapp.com/),
 
@@ -31,7 +33,8 @@ or walk through the steps below to run the app locally on your machine.
 4. Type `from app import db` and hit Enter
 5. Type `db.create_all()` and hit Enter
 6. Type `exit()` and hit Enter to exit the Python console
-7. Make sure the database is created successfully by running `sqlite3 database.db .tables`, you should see two tables, `user` and `task`
+7. Make sure the database is created successfully by running `sqlite3 database.db .tables`, you should see two
+   tables, `user` and `task`
 
 ## Running the app
 
@@ -45,12 +48,32 @@ or walk through the steps below to run the app locally on your machine.
 ## How everything works
 
 ### Entity-Relationship Diagram
+
 ![ER Diagram](https://github.com/youssef-attai/cs50_project/blob/master/imgs/erd.png)
 
 ### Technologies used
 
-- Flask
-- Bootstrap
-- JQuery
-- SQLAlchemy
+- [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+- [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+- [JQuery](https://jquery.com/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
 
+Authentication is done using [Flask-Login](https://flask-login.readthedocs.io/en/latest/)
+
+Database management is done using [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
+
+Password hashing is done using [Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/1.0.1/)
+
+HTML forms are done using [Flask-WTF](https://flask-wtf.readthedocs.io/en/1.0.x/)
+
+Icons are from [FontAwesome](https://fontawesome.com/)
+
+### Acknowledgments
+
+- [Stackoverflow answer by Hosein Yeganloo](https://stackoverflow.com/a/44724510/14174934)
+- [Stackoverflow answer by Erwin Brandstetter](https://stackoverflow.com/a/11919677/14174934)
+- [Stackoverflow answer by Leandro Lima and davidism](https://stackoverflow.com/a/64698899/14174934)
+- [Stackoverflow answer by FogleBird and tremendows](https://stackoverflow.com/a/7478705/14174934)
+- [Heroku Dev Center - Setting up Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-linux)
+- [Real Python YouTube Video - Deploy a Flask Application on Heroku](https://www.youtube.com/watch?v=4_EO4RwABbA)
+- [Codemy.com YouTube Video - Deploy Flask App With Database On Heroku](https://www.youtube.com/watch?v=SiCAIRc0pEI)
