@@ -2,7 +2,7 @@
 
 ![Screenshot of the app's dashboard](https://github.com/youssef-attai/cs50_project/blob/master/imgs/screenshot.png)
 
-This is my CS50's Final Project, it is a To-do web app created using Flask and Bootsrap. You can sign up for a new account. You can create, edit and delete tasks, and of course, mark them as done.
+This is my CS50's Final Project, it is a To-do web app created using Flask and Bootstrap. You can sign up for a new account. You can create, edit and delete tasks, and of course, mark them as done.
 
 You can either start using the app by clicking [here](http://task50.herokuapp.com/),
 
@@ -41,3 +41,8 @@ or walk through the steps below to run the app locally on your machine.
 ## Existing the app
 
 1. Just hit CTRL+C in the terminal window
+
+## How everything works
+
+### Entity-Relationship Diagram
+![ER Diagram](https://github.com/youssef-attai/cs50_project/blob/master/imgs/erd.png)
