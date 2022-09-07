@@ -68,10 +68,15 @@ or walk through the steps below to run the app locally on your machine.
 - `requirements.txt` is the result of running `pip freeze`, it includes all the dependencies needed for hosting the
   app.
 
-When the user first opens the app, they have to register a new account. Every user must have a unique username.
+When the user first opens the app, they have to register a new account. 
+
+Every user must have a unique username.
+
 All user inputs are validated server-side only, and not checked in the browser. Once the user registers successfully,
 they can log in using their username and password, to be redirected to their dashboard, where they can add new tasks to
-their empty to-do list. Users can edit and delete tasks, as well as marking them as "done" or "not done".
+their empty to-do list.
+
+Users can edit and delete tasks, as well as marking them as "done" or "not done".
 
 ### Entity-Relationship Diagram
 
