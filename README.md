@@ -57,7 +57,7 @@ or walk through the steps below to run the app locally on your machine.
 - `app.py` is the application controller, it contains the Flask app setup, all the different routes, and model classes.
 - `templates/` folder contains all the HTML templates.
 - `templates/layout.html` is the base template that all other templates extend, it has important links that need to be
-  in every template's `<head>` tag.
+  in every template's `<head>` tag (e.g. Bootstrap CDN links, JQuery CDN link, etc.).
 - `templates/register.html` is the template for the Registration page.
 - `templates/login.html` is the template for the Login page.
 - `templates/home.html` is the template for the main page.
