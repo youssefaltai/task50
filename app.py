@@ -1,13 +1,11 @@
-from time import sleep
-
 from flask import Flask, render_template, redirect, url_for, flash
-from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user
 from flask_login import current_user
+from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import ValidationError, Length, InputRequired
-from flask_bcrypt import Bcrypt
+from wtforms.validators import ValidationError
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
@@ -30,21 +28,25 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(80), nullable=False)
 
 
+def username_not_used(username):
+    if User.query.filter_by(username=username.data).first():
+        flash("Username already in use", "danger")
+        raise ValidationError("Username already exists.")
+
+
 class RegisterForm(FlaskForm):
     username = StringField(
-        # validators=[InputRequired(), Length(min=4, max=20)],
+        validators=[lambda form, username: username_not_used(username)],
         render_kw={
             "placeholder": "Username",
             "class": "form-control mt-3 mb-1"
         })
     password = PasswordField(
-        # validators=[InputRequired(), Length(min=8, max=20)],
         render_kw={
             "placeholder": "Password",
             "class": "form-control mt-1 mb-1"
         })
     confirm_password = PasswordField(
-        # validators=[InputRequired(), Length(min=8, max=20)],
         render_kw={
             "placeholder": "Confirm password",
             "class": "form-control mt-1 mb-3"
@@ -53,21 +55,14 @@ class RegisterForm(FlaskForm):
         "class": "btn btn-dark mt-3 mb-3"
     })
 
-    def validate_username(self, username):
-        if User.query.filter_by(username=username.data).first():
-            flash("Username already in use", "danger")
-            raise ValidationError("Username already exists.")
-
 
 class LoginForm(FlaskForm):
     username = StringField(
-        # validators=[InputRequired(), Length(min=4, max=20)],
         render_kw={
             "placeholder": "Username",
             "class": "form-control mt-3 mb-1"
         })
     password = PasswordField(
-        # validators=[InputRequired(), Length(min=8, max=20)],
         render_kw={
             "placeholder": "Password",
             "class": "form-control mt-1 mb-3"
