@@ -1,3 +1,6 @@
+import logging
+import sys
+
 from flask import Flask, render_template, redirect, url_for, flash
 from flask_bcrypt import Bcrypt
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user
@@ -9,6 +12,9 @@ from wtforms.validators import ValidationError
 from flask import request
 
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
+
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
