@@ -32,3 +32,7 @@ You can try it out [here](http://task50.herokuapp.com/)
 
 1. Run the following command `flask run`
 2. Go to http://127.0.0.1:5000, you should see the app working as expected
+
+## Existing the app
+
+1. Just hit CTRL+C in the terminal window
