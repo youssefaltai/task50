@@ -111,5 +111,5 @@ Icons are from [FontAwesome](https://fontawesome.com/)
 
 # Special thanks
 
-To all of CS50's staff. The course taught me a LOT, and I truly wish I had started my computer science journey with it,
+To all of [CS50](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)'s staff. The course taught me a LOT, and I truly wish I had started my computer science journey with it,
 my life would have been much easier.
