@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}
+    Edit task
+{% endblock %}
+{% block container %}
+    <h3>Edit {{ title }}</h3>
+    <form class="input-group mt-3" action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.task }}
+        {{ form.submit }}
+    </form>
+{% endblock %}
+{% block js %}
+{% endblock %}

@@ -85,9 +85,22 @@ class TaskAddForm(FlaskForm):
     task = StringField(
         render_kw={
             "placeholder": "Task title",
-            "class": "form-control"
+            "class": "form-control",
+            "id": "task-title-input"
         })
     submit = SubmitField("Add task", render_kw={
+        "class": "btn btn-outline-dark"
+    })
+
+
+class TaskEditForm(FlaskForm):
+    task = StringField(
+        render_kw={
+            "placeholder": "New task title",
+            "class": "form-control",
+            "id": "task-title-input"
+        })
+    submit = SubmitField("Rename task", render_kw={
         "class": "btn btn-outline-dark"
     })
 
@@ -99,6 +112,26 @@ def toggle():
     task.done = (request.form.get("done") == 'true')
     db.session.commit()
     return '', 204
+
+
+@app.route('/delete', methods=["POST"])
+@login_required
+def delete():
+    Task.query.filter_by(id=int(request.form.get("taskid"))).delete()
+    db.session.commit()
+    return '', 204
+
+
+@app.route('/edit/<taskid>', methods=["GET", "POST"])
+@login_required
+def edit(taskid):
+    form = TaskEditForm()
+    task = Task.query.get(taskid)
+    if form.validate_on_submit():
+        task.title = form.task.data
+        db.session.commit()
+        return redirect(url_for("dashboard"))
+    return render_template("edit.html", form=form, title=task.title)
 
 
 @app.route('/')
@@ -200,4 +233,4 @@ def register():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, threaded=True)
