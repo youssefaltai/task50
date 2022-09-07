@@ -65,7 +65,7 @@ or walk through the steps below to run the app locally on your machine.
 - `templates/edit.html` is the template for the Edit page, where the user can edit a specific task determined via a url
   parameter.
 - `Procfile` is a file that tells Heroku how to run the app.
-- `requirements.txt` is the result of running `pip freeze`, it includes all the dependencies needed before hosting the
+- `requirements.txt` is the result of running `pip freeze`, it includes all the dependencies needed for hosting the
   app.
 
 When the user first opens the app, they have to register a new account. Every user must have a unique username.
