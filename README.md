@@ -1,4 +1,7 @@
-# CS50 Final Project
+# Task50
+This is my CS50's Final Project
+
+You can try it out [here](http://task50.herokuapp.com/)
 
 ## Requirements
 
