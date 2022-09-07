@@ -3,20 +3,44 @@
     Dashboard
 {% endblock %}
 {% block container %}
-    <ul class="nav justify-content-end">
-        <li class="nav-item mt-2">
+    <ul class="nav justify-content-between m-3">
+        <li class="nav-item">
+            <p>You are logged in as {{ current_user.username }}</p>
+        </li>
+        <li class="nav-item">
             <a class="btn btn-dark" href="{{ url_for('logout') }}">Log out</a>
         </li>
     </ul>
-    <div class="text-center mt-5">
-        <h1>Hello, {{ current_user.username }}</h1>
-    </div>
+    <h3 class="text-center">Your TODOs</h3>
+    <form class="input-group mt-3" action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.task }}
+        {{ form.submit }}
+    </form>
     <ul class="list-group">
         {% for task in tasks %}
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox-{{ task.id }}">
+                <input data-taskid="{{ task.id }}" class="form-check-input me-1" type="checkbox" value=""
+                       id="checkbox-{{ task.id }}" {% if task.done %}checked{% endif  %}>
                 <label class="form-check-label" for="checkbox-{{ task.id }}">{{ task.title }}</label>
             </li>
         {% endfor %}
     </ul>
+{% endblock %}
+{% block js %}
+    <script>
+        document.querySelectorAll(".form-check-input.me-1").forEach(checkbox => {
+            checkbox.addEventListener("click", () => {
+                const xhr = new XMLHttpRequest();
+                const url = `/toggle/${checkbox.dataset.taskid}`;
+                xhr.open("GET", url, true);
+                xhr.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        console.log(this.responseText);
+                    }
+                }
+                xhr.send();
+            })
+        });
+    </script>
 {% endblock %}

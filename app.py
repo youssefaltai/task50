@@ -33,6 +33,7 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    done = db.Column(db.Boolean, default=False)
 
 
 def username_not_used(username):
@@ -79,6 +80,25 @@ class LoginForm(FlaskForm):
     })
 
 
+class TaskAddForm(FlaskForm):
+    task = StringField(
+        render_kw={
+            "placeholder": "Task title",
+            "class": "form-control"
+        })
+    submit = SubmitField("Add task", render_kw={
+        "class": "btn btn-outline-dark"
+    })
+
+
+@app.route('/toggle/<taskid>')
+def toggle(taskid):
+    task = Task.query.get(taskid)
+    task.done = not task.done
+    db.session.commit()
+    return '', 204
+
+
 @app.route('/')
 def home():
     if current_user.is_authenticated:
@@ -87,11 +107,26 @@ def home():
         return render_template("home.html")
 
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=["GET", "POST"])
 @login_required
 def dashboard():
+    form = TaskAddForm()
     tasks = current_user.tasks
-    return render_template("dashboard.html", tasks=tasks)
+
+    if form.validate_on_submit():
+        if not form.task.data:
+            flash("Missing task title", "danger")
+            return render_template("dashboard.html", tasks=tasks, form=form)
+
+        task = Task()
+        task.title = form.task.data
+        task.user_id = current_user.id
+        db.session.add(task)
+        db.session.commit()
+        flash(f"New task added: {form.task.data}", "success")
+        return redirect(url_for("dashboard"))
+
+    return render_template("dashboard.html", tasks=tasks, form=form)
 
 
 @app.route('/logout', methods=["GET", "POST"])
