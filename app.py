@@ -229,6 +229,7 @@ def register():
             return render_template("register.html", form=form)
 
         hashed_password = bcrypt.generate_password_hash(form.password.data)
+        hashed_password = hashed_password.decode("utf-8", "ignore")
         new_user = User()
         new_user.username = form.username.data
         new_user.password = hashed_password
