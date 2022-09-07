@@ -19,7 +19,7 @@ app.logger.setLevel(logging.ERROR)
 db = SQLAlchemy(app)
 db.create_all()
 bcrypt = Bcrypt(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL'].replace("postgres://", "postgresql://")
 app.config["SECRET_KEY"] = "MatthewMichaelMattMurdock"
 login_manager = LoginManager()
 login_manager.init_app(app)
