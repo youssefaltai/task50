@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user
+from flask_login import current_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import ValidationError, Length, InputRequired
@@ -18,7 +19,7 @@ login_manager.login_view = "login"
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return User.query.get(user_id)
 
 
 class User(db.Model, UserMixin):
@@ -45,7 +46,10 @@ class LoginForm(FlaskForm):
 
 @app.route('/')
 def home():
-    return render_template("home.html")
+    if current_user.is_authenticated:
+        return redirect(url_for("dashboard"))
+    else:
+        return render_template("home.html")
 
 
 @app.route('/dashboard')
@@ -79,7 +83,9 @@ def register():
 
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data)
-        new_user = User(username=form.username.data, password=hashed_password)
+        new_user = User()
+        new_user.username = form.username.data
+        new_user.password = hashed_password
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for("login"))
