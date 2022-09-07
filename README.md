@@ -68,7 +68,7 @@ or walk through the steps below to run the app locally on your machine.
 - `requirements.txt` is the result of running `pip freeze`, it includes all the dependencies needed for hosting the
   app.
 
-When the user first opens the app, they have to register a new account. 
+When the user first opens the app, they have to register a new account.
 
 Every user must have a unique username.
 
@@ -108,3 +108,8 @@ Icons are from [FontAwesome](https://fontawesome.com/)
 - [Heroku Dev Center - Setting up Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-linux)
 - [Real Python YouTube Video - Deploy a Flask Application on Heroku](https://www.youtube.com/watch?v=4_EO4RwABbA)
 - [Codemy.com YouTube Video - Deploy Flask App With Database On Heroku](https://www.youtube.com/watch?v=SiCAIRc0pEI)
+
+# Special thanks
+
+To all of CS50's staff. The course taught me a LOT, and I truly wish I had started my computer science journey with it,
+my life would have been much easier.
