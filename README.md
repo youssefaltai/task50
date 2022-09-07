@@ -46,3 +46,11 @@ or walk through the steps below to run the app locally on your machine.
 
 ### Entity-Relationship Diagram
 ![ER Diagram](https://github.com/youssef-attai/cs50_project/blob/master/imgs/erd.png)
+
+### Technologies used
+
+- Flask
+- Bootstrap
+- JQuery
+- SQLAlchemy
+
