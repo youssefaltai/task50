@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 
 from flask import Flask, render_template, redirect, url_for, flash
@@ -18,7 +19,7 @@ app.logger.setLevel(logging.ERROR)
 db = SQLAlchemy(app)
 db.create_all()
 bcrypt = Bcrypt(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
 app.config["SECRET_KEY"] = "MatthewMichaelMattMurdock"
 login_manager = LoginManager()
 login_manager.init_app(app)
