@@ -27,3 +27,8 @@ You can try it out [here](http://task50.herokuapp.com/)
 5. Type `db.create_all()` and hit Enter
 6. Type `exit()` and hit Enter to exit the Python console
 7. Make sure the database is created successfully by running `sqlite3 database.db .tables`, you should see two tables, `user` and `task`
+
+## Running the app
+
+1. Run the following command `flask run`
+2. Go to http://127.0.0.1:5000, you should see the app working as expected
