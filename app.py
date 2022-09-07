@@ -26,6 +26,13 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False, unique=True)
     password = db.Column(db.String(80), nullable=False)
+    tasks = db.relationship('Task', backref='user', lazy=True)
+
+
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
 def username_not_used(username):
@@ -83,7 +90,8 @@ def home():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template("dashboard.html")
+    tasks = current_user.tasks
+    return render_template("dashboard.html", tasks=tasks)
 
 
 @app.route('/logout', methods=["GET", "POST"])

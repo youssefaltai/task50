@@ -9,6 +9,14 @@
         </li>
     </ul>
     <div class="text-center mt-5">
-        <h1 class="display-1">Hello, {{ current_user.username }}</h1>
+        <h1>Hello, {{ current_user.username }}</h1>
     </div>
+    <ul class="list-group">
+        {% for task in tasks %}
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox-{{ task.id }}">
+                <label class="form-check-label" for="checkbox-{{ task.id }}">{{ task.title }}</label>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
