@@ -2,8 +2,12 @@
 {% block title %}
     Home
 {% endblock %}
-{% block body %}
-    <h1>CS50 Project</h1>
-    <a href="{{ url_for('login') }}">Log in</a>
-    <a href="{{ url_for('register') }}">Register</a>
+{% block container %}
+    <div class="text-center mt-5">
+        <h1 class="display-1">Task50</h1>
+        <p>Keep track of your TODOs</p>
+        <a class="btn btn-dark" href="{{ url_for('login') }}">Log in</a>
+        <a class="btn btn-dark" href="{{ url_for('register') }}">Register</a>
+    </div>
+
 {% endblock %}

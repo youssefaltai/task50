@@ -13,6 +13,18 @@
     <title>CS50 Project - {% block title %}{% endblock %}</title>
 </head>
 <body>
-{% block body %}{% endblock %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="alert alert-{{ category }} m-3" style="list-style: none">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+<div class="container">
+    {% block container %}{% endblock %}
+</div>
+
 </body>
 </html>

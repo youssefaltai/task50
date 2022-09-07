@@ -2,7 +2,9 @@
 {% block title %}
     Dashboard
 {% endblock %}
-{% block body %}
-    <h1>Hello, {{ current_user.username }}</h1>
-    <a href="{{ url_for('logout') }}">Log out.</a>
+{% block container %}
+    <div class="text-center mt-5">
+        <h1 class="display-1">Hello, {{ current_user.username }}</h1>
+        <a class="btn btn-dark" href="{{ url_for('logout') }}">Log out.</a>
+    </div>
 {% endblock %}
