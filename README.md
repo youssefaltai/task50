@@ -4,7 +4,7 @@
 
 #### Description:
 
-This is a to-do list web app created using Flask and Bootstrap. You can sign up for a new account, you can create, edit and
+This is a to-do list web app. You can sign up for a new account, you can create, edit and
 delete tasks, and of course, mark them as done.
 
 ![Screenshot of the app's dashboard](https://github.com/youssef-attai/cs50_project/blob/master/imgs/screenshot.png)
