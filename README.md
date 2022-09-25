@@ -4,8 +4,8 @@
 
 #### Description:
 
-This is a to-do list web app. You can sign up for a new account, you can create, edit and
-delete tasks, and of course, mark them as done.
+This is a to-do list web app. You can sign up for a new account, can create, edit and
+delete tasks, mark them as done/undone.
 
 The name is inspired by CS50's command-line tools `check50` and `submit50`.
 
