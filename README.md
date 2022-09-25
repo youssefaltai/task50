@@ -4,14 +4,12 @@
 
 #### Description:
 
-This is a to-do list web app. You can sign up for a new account, can create, edit and
-delete tasks, mark them as complete/incomplete.
+This is my CS50's Final Project. It is a to-do list web app where you can sign up for an account to manage your to-dos. You can create, edit and
+delete tasks. You can mark them as complete/incomplete.
 
 The name is inspired by CS50's command-line tools `check50` and `submit50`.
 
 ![Screenshot of the app's dashboard](https://github.com/youssef-attai/cs50_project/blob/master/imgs/screenshot.png)
-
-This is my CS50's Final Project.
 
 You can either start using the app by clicking [here](http://task50.herokuapp.com/),
 
