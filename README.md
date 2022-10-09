@@ -24,18 +24,26 @@ or walk through the steps below to run the app locally on your machine.
 
 ### Setting up the environment
 
-1. Open a terminal window, run the following command to clone the repository:
+Open a terminal window, run the following command to clone the repository:
+
 ```
 git clone https://github.com/youssef-attai/cs50_project.git
+cd cs50_project
 ```
-2. `cd` to the directory `cs50_project`
-3. If you don't already have virtualenv installed, run the following command:
+
+If you don't already have virtualenv installed, run the following command:
+
 ```
-pip3 install virtualenv
+pip install virtualenv
 ```
-4. Run `virtualenv venv` to create a new environment called "venv"
-5. Run `source venv/bin/activate` to activate the virtual environment
-6. Run `pip3 install -r requirements.txt` to install the requirements in the environment
+
+Run the following commands to setup the environment:
+
+```
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 ### Setting up the database
 
