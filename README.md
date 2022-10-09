@@ -24,7 +24,7 @@ or walk through the steps below to run the app locally on your machine.
 
 ### Setting up the environment
 
-Open a terminal window, run the following command to clone the repository:
+Open a terminal window, and run the following commands:
 
 ```
 git clone https://github.com/youssef-attai/cs50_project.git
