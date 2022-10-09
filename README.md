@@ -19,8 +19,8 @@ or walk through the steps below to run the app locally on your machine.
 
 ### Requirements
 
-- Install Python 3.x
-- Install SQLite3
+- Install [Python 3](https://www.python.org/)
+- Install [SQLite3](https://www.sqlite.org/)
 
 ### Setting up the environment
 
@@ -50,7 +50,7 @@ or walk through the steps below to run the app locally on your machine.
 
 ### Existing the app
 
-1. Just hit CTRL+C in the terminal window
+1. Just hit 'CTRL+C' in the terminal window
 
 ## How everything works
 
