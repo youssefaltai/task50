@@ -39,23 +39,41 @@ pip3 install virtualenv
 
 ### Setting up the database
 
-1. Run the following command `touch database.db`
-2. Run the following command `export DATABASE_URL=sqlite:///database.db`
-3. Run the Python console by typing `python` or `python3` and hitting Enter
-4. Type `from app import db` and hit Enter
-5. Type `db.create_all()` and hit Enter
-6. Type `exit()` and hit Enter to exit the Python console
-7. Make sure the database is created successfully by running `sqlite3 database.db .tables`, you should see two
-   tables, `user` and `task`
+Run the following commands:
+
+```
+touch database.db
+export DATABASE_URL=sqlite:///database.db
+```
+
+Start a Python interactive session by typing in `python` or `python3` then hit `Enter`.
+
+```
+from app import db
+db.create_all()
+exit()
+```
+
+Make sure the database is created successfully by running:
+```
+sqlite3 database.db .tables
+```
+
+You should see two new tables created, `user` and `task`
 
 ### Running the app
 
-1. Run the following command `flask run`
+1. Run the following command:
+
+```
+flask run
+```
+
 2. Go to http://127.0.0.1:5000, you should see the app working as expected
 
 ### Existing the app
 
-1. Just hit 'CTRL+C' in the terminal window
+1. Just hit `Ctrl+c` in the terminal window
 
 ## How everything works
 
@@ -85,7 +103,7 @@ Users can edit and delete tasks, as well as marking them as "done" or "not done"
 
 ### Entity-Relationship Diagram
 
-![ER Diagram](https://github.com/youssef-attai/cs50_project/blob/master/imgs/erd.png)
+![ER Diagram](./imgs/Task50%20ERD.svg)
 
 ### Technologies used
 
