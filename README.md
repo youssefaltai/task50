@@ -31,7 +31,7 @@ git clone https://github.com/youssef-attai/cs50_project.git
 cd cs50_project
 ```
 
-If you don't already have virtualenv installed, run the following command:
+If you don't already have `virtualenv` installed, run the following command:
 
 ```
 pip install virtualenv
