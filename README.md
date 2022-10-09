@@ -67,7 +67,7 @@ Make sure the database is created successfully by running:
 sqlite3 database.db .tables
 ```
 
-You should see two new tables created, `user` and `task`
+You should see two new tables created: `user` and `task`.
 
 ### Running the app
 
@@ -77,11 +77,11 @@ You should see two new tables created, `user` and `task`
 flask run
 ```
 
-2. Go to http://127.0.0.1:5000, you should see the app working as expected
+2. Go to http://127.0.0.1:5000, you should see the app working as expected.
 
 ### Existing the app
 
-1. Just hit `Ctrl+c` in the terminal window
+1. Just hit `Ctrl+c` in the terminal window and the server will stop.
 
 ## How everything works
 
