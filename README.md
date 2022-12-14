@@ -113,9 +113,7 @@ Users can edit and delete tasks, as well as marking them as "done" or "not done"
 
 ```mermaid
 %%{init:{
-  'theme': 'base',
-  'themeVariables': {
-  }
+  'theme': 'default'
 }}%%
 erDiagram
   USER ||--o{ TASK : has
