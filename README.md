@@ -112,7 +112,12 @@ Users can edit and delete tasks, as well as marking them as "done" or "not done"
 ### Entity-Relationship Diagram
 
 ```mermaid
-%%{init: {'darkMode': true}}%%
+%%{init:{
+  'theme': 'base',
+  'themeVariables': {
+    'darkMode': true
+  }
+}}%%
 erDiagram
   USER ||--o{ TASK : has
 
