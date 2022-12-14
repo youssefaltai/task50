@@ -115,7 +115,6 @@ Users can edit and delete tasks, as well as marking them as "done" or "not done"
 %%{init:{
   'theme': 'base',
   'themeVariables': {
-    'darkMode': true
   }
 }}%%
 erDiagram
