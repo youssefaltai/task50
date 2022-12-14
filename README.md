@@ -111,7 +111,23 @@ Users can edit and delete tasks, as well as marking them as "done" or "not done"
 
 ### Entity-Relationship Diagram
 
-![ER Diagram](./imgs/Task50%20ERD.svg)
+```mermaid
+erDiagram
+  USER ||--o{ TASK : has
+
+  USER {
+    int id PK
+    string username
+    string password
+  }
+
+  TASK {
+    int id PK
+    int user_id FK
+    string title
+    boolean done
+  }
+```
 
 ### Technologies used
 
