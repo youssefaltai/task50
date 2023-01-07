@@ -11,11 +11,7 @@ The name is inspired by CS50's command-line tools `check50` and `submit50`.
 
 ![Screenshot of the app's dashboard](https://github.com/youssef-attai/cs50_project/blob/master/imgs/screenshot.png)
 
-You can either start using the app by clicking [here](http://task50.herokuapp.com/),
-
-or walk through the steps below to run the app locally on your machine.
-
-## Host the app locally on your machine
+## How to use
 
 ### Requirements
 
