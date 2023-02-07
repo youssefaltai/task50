@@ -107,7 +107,7 @@ their empty to-do list.
 
 Users can edit and delete tasks, as well as marking them as "done" or "not done".
 
-### Entity-Relationship Diagram
+### ER Diagram
 
 ```mermaid
 %%{init:{
