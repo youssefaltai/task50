@@ -25,8 +25,8 @@ The name is inspired by CS50's command-line tools `check50` and `submit50`.
 Open a terminal window, and run the following commands:
 
 ```
-git clone https://github.com/youssef-attai/cs50_project.git
-cd cs50_project
+git clone https://github.com/youssef-attai/task50.git
+cd task50
 ```
 
 If you don't already have `virtualenv` installed, run the following command:
