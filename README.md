@@ -2,6 +2,8 @@
 
 #### Video Demo:  https://www.youtube.com/watch?v=Y-0DWkpcCFQ
 
+###### NOTE: This app is not online anymore, since Heroku ended their free tiers and I'm broke :)
+
 #### Description:
 
 This is my CS50's Final Project. It is a to-do list web app. You can create, edit and
