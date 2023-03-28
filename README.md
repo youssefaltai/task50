@@ -6,7 +6,7 @@
 
 #### Description:
 
-This is my CS50's Final Project. It is a to-do list web app. You can create, edit and
+This is my final project for CS50. It is a to-do list web app. You can create, edit and
 delete tasks. You can mark them as complete/incomplete.
 
 The name is inspired by CS50's command-line tools `check50` and `submit50`.
