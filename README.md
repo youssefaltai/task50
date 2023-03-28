@@ -2,7 +2,7 @@
 
 #### Video Demo:  https://www.youtube.com/watch?v=Y-0DWkpcCFQ
 
-###### NOTE: The app is not online anymore, since Heroku ended their free tier, and I'm broke.
+###### NOTE: The app is not online anymore since Heroku ended their free tier and I'm broke.
 
 #### Description:
 
