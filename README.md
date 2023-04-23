@@ -1,6 +1,6 @@
 # Task50
 
-###### NOTE: The app is not online anymore since Heroku ended their free tier and I'm broke.
+###### NOTE: The app is not online anymore since Heroku ended their free tier and yes I'm broke.
 
 #### Description:
 
